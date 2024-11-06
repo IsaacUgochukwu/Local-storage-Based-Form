@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Main page</title>
+  <style>
+    body {
+      font: 1rem sans-serif;
+      color: #666;
+      background-color: white;
+    }
+
+    .greeting {
+      color: black;
+      display: block;
+      margin: 150px auto;
+      text-align: center;
+      font: 1.5rem sans-serif;
+    }
+
+    .card {
+      background-color: whitesmoke;
+      border: thin solid grey;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 2rem auto;
+      width: 250px;
+      height: auto;
+      border-radius: 2rem;
+      margin-top: 150px;
+    }
+
+    .card span {
+      font-size: 1.2rem;
+      margin: 1rem;
+    }
+
+    .img {
+      position: absolute;
+      top: 230px;
+      left: auto;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .file {
+      display: none;
+    }
+
+    .file-btn {
+      display: block;
+      margin: 2rem auto;
+      width: 150px;
+      height: 50px;
+      background-color: darkblue;
+      color: white;
+      border: thin solid grey;
+      border-radius: 1rem;
+      bottom: 3rem;
+      cursor: pointer;
+    }
+
+    .logout {
+      background-color: lightgrey;
+      font-weight: bolder;
+      font-size: 1.2rem;
+      color: black;
+      border: thin solid grey;
+      border-radius: 0.70rem;
+      position: fixed;
+      top: 25px;
+      left: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body onload="getUserName(), feedBars()">
+  <div>
+    <button class="logout" onclick="logout()">&larr;</button>
+  </div>
+  <span id="greeting" class="greeting"></span>
+  <div class="card">
+    <figure>
+      <img src="" alt="Image" class="img" id="img">
+    </figure>
+    <span id="fullname-bar"></span>
+  </div>
+
+  <span><button class="file-btn" onclick="clickFileInput()">Add profile photo 📸</button><input type="file" name="img" id="file-input" accept="*/image" class="file" onchange="uploadPic(event)"></span>
+
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>

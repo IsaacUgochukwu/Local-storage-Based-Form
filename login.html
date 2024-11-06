@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+  <style>
+    body {
+      font: 1.3rem sans-serif;
+      color: #666;
+      background-color: white;
+    }
+
+    h2 {
+      color: black;
+      text-align: center;
+    }
+
+    form {
+      margin: 50px 20px;
+    }
+
+    label {
+      display: block;
+      margin-left: 50px;
+      margin-bottom: 10px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      display: block;
+      margin: auto;
+      font: 1rem sans-serif;
+      padding: 5px;
+      width: 200px;
+      height: 30px;
+      border: 1.5px solid #5A64CECC;
+      border-radius: 8px;
+    }
+
+    button[type="submit"] {
+      display: block;
+      margin: 2rem auto;
+      width: 150px;
+      height: 50px;
+      border: thin solid grey;
+      border-radius: 1rem;
+      background-color: green;
+      color: white;
+      cursor: pointer;
+      font-weight: bolder;
+    }
+
+    .dialog {
+      display: none;
+      position: fixed;
+      top: 100px;
+      left: 20px;
+      width: 80%;
+      height: auto;
+      padding: 1rem;
+      text-align: center;
+      background-color: whitesmoke;
+      border: thin solid grey;
+      border-radius: 10px;
+      animation: 1s ease-out pop;
+    }
+
+    .dialog p {
+      color: black;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0);
+      }
+
+      100% {
+        transform: scale(100%);
+      }
+    }
+
+    .okay {
+      width: 100px;
+      height: 40px;
+      color: white;
+      background-color: green;
+      border: thin solid grey;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .blur {
+      -webkit-filter: blur(3px);
+    }
+
+    .red {
+      color: red;
+      font-size: 0.90rem;
+      text-align: center;
+      display: block;
+      margin: 1rem auto;
+      margin-bottom: 0;
+    }
+
+    .green {
+      font-size: 0.90rem;
+      color: green;
+      text-align: center;
+      display: block;
+      margin: 1rem auto;
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <form id="form" onsubmit="login(event)">
+    <h2>Login</h2>
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" onchange="checkEmail(event)" required>
+    <span id="info"></span>
+    <br><br>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" onchange="checkPasswordFound(event)" required>
+    <span id="info-two"></span>
+    <span id="message"></span>
+    <button type="submit">Login</button>
+  </form>
+
+  <div class="dialog" id="dialog">
+    <p>You'll be taken to the main page for more fun! 😂👊</p>
+    <button class="okay" onclick="handleClick()">Okay</button>
+  </div>
+
+  <script src="scripts/index.js"></script>
+</body>
+
+</html>
